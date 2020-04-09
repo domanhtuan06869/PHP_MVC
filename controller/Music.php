@@ -23,7 +23,7 @@ class Music{
     {
         if ($_POST) {
             $this->model->insert();
-            header("Location: http://localhost/pdomvc/index.php/music");
+            header("Location: http://localhost/PHP_MVC/index.php/music");
         } else {
             require 'view/music/form.php';
         }
@@ -33,7 +33,7 @@ class Music{
     {
         if ($_POST) {
             $this->model->update($id);
-            header("Location: http://localhost/pdomvc/index.php/music");
+            header("Location: http://localhost/PHP_MVC/index.php/music");
         } else {
             $music = $this->model->getMusicById($id);
             require 'view/music/form.php';
@@ -44,7 +44,7 @@ class Music{
     {
         if ($id) {
             $this->model->delete($id);
-            header("Location: http://localhost/pdomvc/index.php/music");
+            header("Location: http://localhost/PHP_MVC/index.php/music");
         }
     }
 }
