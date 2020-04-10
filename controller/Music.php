@@ -1,4 +1,5 @@
 <?php 
+
 class Music{
     protected $model = '';
 

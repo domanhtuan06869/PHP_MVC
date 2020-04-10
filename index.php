@@ -1,19 +1,16 @@
-<?php 
+<?php
 
-$request = preg_replace("|/*(.+?)/*$|", "\\1", $_SERVER['PATH_INFO']);
-$uri = explode('/', $request);
 
-$uri0 = isset($uri[0]);
-$uri1 = isset($uri[1]);
 
 require_once "configDB/Database.php";
 require_once "controller/Music.php";
 require_once "model/MusicModel.php";
+require_once "router/Router.php";
 $db = new Database();
 $model = new MusicModel($db);
 $controller = new Music($model);
 
-if ($uri0 && $uri1 && $uri[0] === 'music' && $uri[1] === 'detail') {         // Detail
+ if ($uri0 && $uri1 && $uri[0] === 'music' && $uri[1] === 'detail') {         // Detail
     $id = $_GET['id'];
     $controller->detail($id);
 } elseif ($uri0 && $uri1 && $uri[0] === 'music' && $uri[1] === 'edit') {     // Edit
