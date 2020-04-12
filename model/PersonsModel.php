@@ -1,5 +1,5 @@
 <?php
-class MusicModel{
+class PersonsModel{
     protected $db;
 
     public function __construct($database)
@@ -7,23 +7,23 @@ class MusicModel{
         $this->db = $database;
     }
 
-    public function getAllMusic()
+    public function getAllPersons()
     {
         $link = $this->db->openDbConnection();
 
         $result = $link->query('SELECT * FROM persons');
 
-        $music = array();
+        $persons = array();
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $music[] = $row;
+            $persons[] = $row;
         }
         $this->db->closeDbConnection($link);
 
         
-		return $music;
+		return $persons;
     }
 
-    public function getMusicById($id)
+    public function getPersonsById($id)
     {
         $link = $this->db->openDbConnection();
 

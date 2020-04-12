@@ -5,16 +5,14 @@ $uri = explode('/', $request);
 $uri0 = isset($uri[0]);
 $uri1 = isset($uri[1]);
 
-
 require_once "configDB/Database.php";
-require_once "controller/Music.php";
-require_once "model/MusicModel.php";
-require_once "router/Router.php";
+require_once "controller/Persons.php";
+require_once "model/PersonsModel.php";
 $db = new Database();
-$model = new MusicModel($db);
-$controller = new Music($model);
+$model = new PersonsModel($db);
+$controllerPersons = new Persons($model);
 
-if ($uri[0] == "music") {
+if ($uri[0] == "persons") {
     require_once "controller/RouterController.php";
 } else {
     header('HTTP/1.1 404 Not Found');
