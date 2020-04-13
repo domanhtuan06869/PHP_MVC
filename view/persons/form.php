@@ -20,7 +20,7 @@ $id = isset($person['Personid']) ?$person['Personid'] : '';
 
 <?php ob_start() ?>
     <h1><?= $action ?></h1>
-
+<?php var_dump($person) ?>
     <form action="<?= $form_action ?>" method="post">
         <?php if ($id): ?>
             <input type="hidden" name="id" value="<?= $id ?>">

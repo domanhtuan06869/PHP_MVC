@@ -2,7 +2,12 @@
 <?php ob_start() ?>
 	<br>
     <center><h1>Persons</h1></center>
-	<br>
+    <?php
+    $keys   = array_values( $persons );
+
+    //now it is converted to object and you can access it.
+  $value= $keys[0]['LastName'];
+  ?>
 	<div class="table-responsive"> 
     <table class="table">
         <tr>
